@@ -9,12 +9,17 @@ messages = ["Wow you is beautiful", "Awesome", "Lets get marry", "Precious", "Yo
 #home route 
 @app.route('/')
 def home():
-    #choosing one random picked index from the messages list and assign it to message variable/property.
-    message = choice(messages)
-    #getting data from an input in the base.html 
-    name = request.args.get('name')
-    return f"{message} : {name}"
+   
+  
+   return render_template("index.html")
 
+# show result base on what user enter in seach box
+@app.route("/showResult")
+def showResult():
+
+    search = request.args.get("name")
+
+    return f"user entered: {search} "
 
 
 
