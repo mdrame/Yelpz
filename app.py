@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template
 from random import choice
+from random import sample 
 
 
 app = Flask(__name__)
@@ -18,8 +19,9 @@ def home():
 def showResult():
 
     search = request.args.get("name")
+    three_messages = sample(messages, 3)
 
-    return f"user entered: {search} "
+    return f"user entered: {search}, {three_messages}"
 
 
 
