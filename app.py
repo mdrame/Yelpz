@@ -29,11 +29,13 @@ def home():
 @app.route("/showResult")
 def showResult():
 
-    search = request.args.get("limitTo")
+    search = request.args.get("storeName")
     # this is usually right behind the url of API address
-    # params = {"store_Name": search}
+    params = {  "term": search,
+                "key": key
+                }
 
-    r = requests.get("http://api.icndb.com/jokes/random?limitTo=nerdy")
+    r = requests.get("https://api.yelp.com/v3/businesses/search",id=params)
     jokes_json = r.json()
     # print(jokes_json)
     #three_messages = sample(messages, 3)
