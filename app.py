@@ -3,11 +3,19 @@ from random import choice
 from random import sample 
 import requests
 import json
+import os #creating a enviromental variable : so our api key and id won't get pushed to github or remotely.
 
 
 app = Flask(__name__)
 
 messages = ["Wow you is beautiful", "Awesome", "Lets get marry", "Precious", "Your are so awesome"]
+
+# Yelp business info API request url
+# https://api.yelp.com/v3/businesses/{id}
+
+id = 'adLzMuVhL1CSj0j0VeXTZQ'
+key = 'P8HZvWFwVupqzc7RTaLgjHxRIN0f6E380U6ZpIFCJaPZl-ButUiJlrTq89KVnDkRuesCGBinXj8MPqiUL_KT9ooFU1xHsDe72NBVDWO_MhmKDKpOgUHOASvVG6GiXXYx'
+
 
 #home route 
 @app.route('/')
