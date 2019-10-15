@@ -8,12 +8,21 @@
     <body>
 
         <h1> Data : </h1>
-       
 
-        <form action="/showResult">
-            <input type="text" name="term"> </input>
-            <button type="submit"> Submit </button>
-        </form>
+        <!-- Do a for loop with the range of the amount of bussines was gotten  -->
+       
+         <div>
+             <img src="{{ business_json['businesses'][0]['image_url']  }}"/>
+            <h3> Business Name:  {{ business_json['businesses'][0]['name']  }} </h3>
+            <h3> Operation:  {{ business_json['businesses'][0]['is_closed']  }} </h3>
+            <h3> Rating:  {{ business_json['businesses'][0]['rating']  }} </h3>
+            <h3> Distance:  {{ business_json['businesses'][0]['distance']  }} </h3>
+            <a href="{{ business_json['businesses'][0]['url'] }}"> Visit </a>
+            <!-- gif_list[0]['media'][0]['gif']['url'] -->
+         </div>
+
+
+
 
         
 
