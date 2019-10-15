@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
-from random import choice
-from random import sample 
+from random import choice, sample 
+import  random
 import requests
 import json
 import os #creating a enviromental variable : so our api key and id won't get pushed to github or remotely.

@@ -7,19 +7,20 @@
     </head>
     <body>
 
-        <h1> Data : </h1>
+        <h1> Data recived from Yelp Fusion API: </h1>
 
         <!-- Do a for loop with the range of the amount of bussines was gotten  -->
-       
+        {% for i in range(business_json | length + 1) %}
          <div>
-             <img src="{{ business_json['businesses'][0]['image_url']  }}"/>
-            <h3> Business Name:  {{ business_json['businesses'][0]['name']  }} </h3>
-            <h3> Operation:  {{ business_json['businesses'][0]['is_closed']  }} </h3>
-            <h3> Rating:  {{ business_json['businesses'][0]['rating']  }} </h3>
-            <h3> Distance:  {{ business_json['businesses'][0]['distance']  }} </h3>
+             <img src="{{ business_json['businesses'][i]['image_url']  }}"/>
+            <h3> Business Name:  {{ business_json['businesses'][i]['name']  }} </h3>
+            <h3> Close:  {{ business_json['businesses'][i]['is_closed']  }} </h3>
+            <h3> Rating:  {{ business_json['businesses'][i]['rating']  }} </h3>
+            <h3> Distance:  {{ business_json['businesses'][i]['distance']  }} </h3>
             <a href="{{ business_json['businesses'][0]['url'] }}"> Visit </a>
             <!-- gif_list[0]['media'][0]['gif']['url'] -->
          </div>
+         {% endfor %}
 
 
 
