@@ -11,18 +11,22 @@
         <div class="body_wrap">
             <img src="/static/images/logo.jpg" id="logo" >
         <hr>
-       
+
+    
+        
         <div id="form_wrap">
             <form action="/showResult" class="form">
-                <input onfocus="this.value=''" type="text" name="term" value="{{city}}"> </input>
-                <input onfocus="this.value=''" type="text" name="city" placeholder="City Name ..." > </input>
+                <input onfocus="this.value=''" type="text" name="term" placeholder="Food,Place, Term"> </input>
+                <input onfocus="this.value=''" type="text" name="city" value="{{ city }}" > </input>
                 <button type="submit"> Submit </button>
             </form>
         </div>
+       
 
         <div id="ball">
 
         </div>
+
 
     </div>
 

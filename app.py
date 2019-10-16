@@ -9,36 +9,50 @@ import pprint #pyhton json viewer  libary
 
 app = Flask(__name__)
 
-def get_country(ip_address):
-    try:
-        response = requests.get("http://ip-api.com/json/{}".format(ip_address))
-        js = response.json()
-        city = js['city']
-        return city
-    except Exception as e:
-        return "Error : We cant seems to find your location, pls turn on your connectivity"
+# # calliing long and lat from ip-api base on user IPAddress.
+# def get_country(ip_address):
 
-stars = {"oneStar": "⭐️",
-         "twoStar": "⭐️ ⭐️",
-         "threeStar": "⭐️ ⭐️ ⭐️",
-         "fourStar": "⭐️ ⭐️ ⭐️ ⭐️",
-         "fiveStar": "⭐️ ⭐️ ⭐️ ⭐️ ⭐️"}
+#         response = requests.get("http://ip-api.com/json/{}".format(ip_address))
+#         js = response.json()
+#         # city = js['countryCode']
+#         return js
+    # except Exception as e:
+    #     return "Error : We cant seems to find your location, pls turn on your connectivity"
+
+# stars = {"oneStar": "⭐️",
+#          "twoStar": "⭐️ ⭐️",
+#          "threeStar": "⭐️ ⭐️ ⭐️",
+#          "fourStar": "⭐️ ⭐️ ⭐️ ⭐️",
+#          "fiveStar": "⭐️ ⭐️ ⭐️ ⭐️ ⭐️"}
 
 # Yelp business info API request url
 business_id = 'adLzMuVhL1CSj0j0VeXTZQ'
 
-
+#yelp Api Keys and ID
 API_KEY = 'P8HZvWFwVupqzc7RTaLgjHxRIN0f6E380U6ZpIFCJaPZl-ButUiJlrTq89KVnDkRuesCGBinXj8MPqiUL_KT9ooFU1xHsDe72NBVDWO_MhmKDKpOgUHOASvVG6GiXXYx'
 ENDPOINT = 'https://api.yelp.com/v3/businesses/search'
 # key = 'P8HZvWFwVupqzc7RTaLgjHxRIN0f6E380U6ZpIFCJaPZl-ButUiJlrTq89KVnDkRuesCGBinXj8MPqiUL_KT9ooFU1xHsDe72NBVDWO_MhmKDKpOgUHOASvVG6GiXXYx'
 HEADERS = {"Authorization": "bearer %s" % API_KEY}
 
+
+# IP-API url
+ip_Url = "http://ip-api.com/json/"
+
 #home route 
 @app.route('/')
 def home():
    
+    # got Api from remote_addr
     ip_address = request.remote_addr
-    city = get_country(ip_address)
+    # this is usually right behind the url of API address
+    PARAMETERS = {"city": ip_address}
+    #calling API
+    respond = requests.get(ip_Url, params=PARAMETERS,)
+
+    dic_of_datas = respond.json()
+    city = dic_of_datas['city']
+    print(city)
+    
     # number of countries where the largest number of speakers are French
     # data from http://download.geonames.org/export/dump/countryInfo.txt
     # if country in ('BL', 'MF', 'TF', 'BF', 'BI', 'BJ', 'CD', 'CF', 'CG', 'CI', 'DJ', 'FR', 'GA', 'GF', 'GN', 'GP', 'MC', 'MG', 'ML', 'MQ', 'NC'):
@@ -53,6 +67,7 @@ def home():
 @app.route("/showResult")
 def showResult():
 
+#calling yelp fusion api
     search = request.args.get("term")
     location = request.args.get("city")
     # this is usually right behind the url of API address
