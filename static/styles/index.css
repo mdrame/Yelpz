@@ -23,22 +23,7 @@ hr{
     display: inline-block;
     margin-top: 50px;
     border: 0px solid white;
-    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
-  animation-name: example;
-  animation-duration: 4s;
-  
 }
-
-/* Standard syntax */
-@keyframes example {
-    0%   { left:0px;}
-    25%  { left:200px;}
-    50%  {left:200px;}
-    75%  { left:0px;}
-    100% { left:0px; }
-  }
-
 
 .form input{
     width: 250px;
@@ -63,13 +48,15 @@ button{
     background-color: blueviolet;
     padding: 10px;
     font-size: 20px;
+    transition-duration: 400ms;
 
 }
 
-button:hover{
 
-    width: 100px;
-    height: 50px;
+
+button:hover{
+    width: 101px;
+    height: 51px;
     border: 2px solid rgb(153, 101, 201);
     border-radius: 10px;
     color: white;
@@ -79,5 +66,20 @@ button:hover{
     box-shadow: 2px 2px 10px  gray;
 }
 
+#ball{
+    margin-top: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 100px;
+    height: 100px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: red;
+    animation: slidein 3s linear 1s infinite alternate;
+}
+
+@keyframes slidein {
+    from { margin-left: 0%; } to { margin-left: 100%; } 
+  }
 
 /* button style */
