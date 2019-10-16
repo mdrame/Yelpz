@@ -9,7 +9,11 @@ import pprint #pyhton json viewer  libary
 
 app = Flask(__name__)
 
-messages = ["Wow you is beautiful", "Awesome", "Lets get marry", "Precious", "Your are so awesome"]
+stars = {"oneStar": "⭐️",
+         "twoStar": "⭐️ ⭐️",
+         "threeStar": "⭐️ ⭐️ ⭐️",
+         "fourStar": "⭐️ ⭐️ ⭐️ ⭐️",
+         "fiveStar": "⭐️ ⭐️ ⭐️ ⭐️ ⭐️"}
 
 # Yelp business info API request url
 business_id = 'adLzMuVhL1CSj0j0VeXTZQ'
@@ -49,7 +53,7 @@ def showResult():
     # pp.pprint(business_json) #print data from yelp
     # #three_messages = sample(messages, 3)
 
-    return render_template("show_Business.html", business_json=business_json)
+    return render_template("show_Business.html", stars=stars,  business_json=business_json)
 
 
 
