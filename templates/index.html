@@ -4,18 +4,23 @@
 
     <head>
         <title> Yelpz | Home </title>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}">
     </head>
     <body>
 
-        <h1> Yelpz </h1>
+        <div class="body_wrap">
+            <img src="/static/images/logo.jpg" id="logo" >
+        <hr>
        
+        <div id="form_wrap">
+            <form action="/showResult" class="form">
+                <input type="text" name="term" placeholder="Food | Business"> </input>
+                <input type="text" name="city" placeholder="City Name" > </input>
+                <button type="submit"> Submit </button>
+            </form>
+        </div>
 
-        <form action="/showResult">
-            <input type="text" name="term"> </input>
-            <button type="submit"> Submit </button>
-        </form>
-
-        
+    </div>
 
     </body>
 

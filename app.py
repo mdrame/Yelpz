@@ -33,9 +33,10 @@ def home():
 def showResult():
 
     search = request.args.get("term")
+    location = request.args.get("city")
     # this is usually right behind the url of API address
     PARAMETERS = {  "term": search,
-                    "location": "San Fancisco"
+                    "location": location
                 # "key": key
                 }
 

@@ -1,0 +1,83 @@
+body{
+    /* background-color: lavender; */
+}
+
+.body_wrap{
+    text-align: center;
+    /* background-color: yellow; */
+}
+
+hr{
+    width: 90%;
+   
+}
+
+#form_wrap{
+ 
+    /* background: orangered; */
+}
+
+#logo{
+    width: 20%;
+    height: auto;
+    display: inline-block;
+    margin-top: 50px;
+    border: 0px solid white;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+  animation-name: example;
+  animation-duration: 4s;
+  
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   { left:0px;}
+    25%  { left:200px;}
+    50%  {left:200px;}
+    75%  { left:0px;}
+    100% { left:0px; }
+  }
+
+
+.form input{
+    width: 250px;
+    height: 30px;
+    border: 2px solid gray;
+    border-radius: 30px;
+    margin: 20px;
+    margin-top: 90px;
+    color: gray;
+    padding: 10px;
+    font-size: 20px;
+    box-shadow: 2px 2px 7px gray;
+}
+
+button{
+
+    width: 100px;
+    height: 50px;
+    border: 2px solid blueviolet;
+    border-radius: 10px;
+    color: white;
+    background-color: blueviolet;
+    padding: 10px;
+    font-size: 20px;
+
+}
+
+button:hover{
+
+    width: 100px;
+    height: 50px;
+    border: 2px solid rgb(153, 101, 201);
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(153, 101, 201);
+    padding: 10px;
+    font-size: 20px;
+    box-shadow: 2px 2px 10px  gray;
+}
+
+
+/* button style */
