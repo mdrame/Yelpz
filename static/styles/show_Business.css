@@ -1,0 +1,37 @@
+.data_container{
+
+    display: inline-block;
+    width:  210px;
+    height: auto;
+    /* border: 6px solid rgb(230, 64, 64); */
+    border-radius: 15px;
+    text-align: center;
+    margin: 20px;
+    
+}
+
+#data_image{
+    /* border: 6px solid red; */
+    border-radius: 5px;
+    max-width:  200px;
+    max-height: auto;
+    border: 2px solid white;
+    margin-top: 10px;
+}
+
+h3{
+    margin-top: -3x;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 15px;
+    background: rgb(241, 241, 241);
+}
+
+a{
+    color: white;
+    background: red;
+    padding: 5px;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 10px;
+}
