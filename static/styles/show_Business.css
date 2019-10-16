@@ -1,31 +1,50 @@
+
+#header{
+
+    width: 100%;
+    height:300px;
+    background-color: purple;
+
+
+}
+
+
+
 .data_container{
 
     display: inline-block;
     width:  210px;
     height: auto;
-    /* border: 6px solid rgb(230, 64, 64); */
+    border-left: 1px solid rgb(226, 226, 226);
+    border-right: 1px solid rgb(226, 226, 226);
     border-radius: 15px;
     text-align: center;
     margin: 20px;
+    padding: 2px;
     
 }
 
 #data_image{
     /* border: 6px solid red; */
     border-radius: 5px;
-    max-width:  200px;
-    max-height: auto;
+    width: 210px;
+    height: 200px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
     border: 2px solid white;
     margin-top: 10px;
 }
 
 h3{
     margin-top: -3x;
-    font-size: 15px;
+    font-size: 14px;
     font-family: 'Courier New', Courier, monospace;
     line-height: 15px;
-    background: rgb(241, 241, 241);
+    background: rgb(248, 248, 248);
+    
 }
+
 
 a{
     color: white;
