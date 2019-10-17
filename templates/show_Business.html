@@ -15,16 +15,13 @@
         </div>
 
         <!-- Do a for loop with the range of the amount of bussines was gotten  -->
-        {% for i in range(business_json | length + 1) %}
+        <!-- this code is hard coded beacuse I know how many data am asking ,
+        instead of using len(dictionary) . -->
+        {% for i in range(20) %}
          <div class="data_container">
              <img src="{{ business_json['businesses'][i]['image_url']  }}" id="data_image"/>
              <!-- changing store close bool to human readible value Yes, No. -->
             <h2> <strong></strong>{{ business_json['businesses'][i]['name']  }} </h2>
-            {% if business_json['businesses'][i]['is_closed'] == 'False' %}
-                <h3> Open </h3>
-            {% elif business_json['businesses'][i]['is_closed'] == "True" %}
-                <h3> Close </h3>
-            {% endif %}
             <h3> ⭐️:  {{ business_json['businesses'][i]['rating']  }} </h3>
             <h3>  {{ business_json['businesses'][i]['phone']  }} </h3>
             <a href="{{ business_json['businesses'][0]['url'] }}"> Visit </a>

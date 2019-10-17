@@ -74,7 +74,10 @@ def showResult():
     location = request.args.get("city")
     # this is usually right behind the url of API address
     PARAMETERS = {  "term": search,
-                    "location": location
+                    "location": location,
+                    "offset": 20
+                    #watch out!! 20 is hard coded inorder to 
+                    #display busines in show_business.html
                 # "key": key
                 }
 

@@ -1,5 +1,6 @@
 body{
     background-color: white;
+    text-align: center;
 }
 
 
@@ -12,18 +13,32 @@ body{
     border: 1px solid none;
     border-radius: 20px;
 
-
 }
 
 #home{
     float: left;
     color: rgb(255, 255, 255);
-    background-color:  rgb(222, 179, 250);
+    background-color:  rgb(180, 112, 224);
     border: 0px solid   rgb(252, 135, 135);
     font-size: 30px;
     margin: 20px;
     font-family: Arial, Helvetica, sans-serif;
+    transition-duration: 400ms;
 }
+
+
+#home:hover{
+    float: left;
+    color: rgb(255, 255, 255);
+    background-color:  rgb(129, 48, 184);
+    border: 0px solid   rgb(252, 135, 135);
+    font-size: 30px;
+    margin: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 2px 2px 10px  gray;
+  
+}
+
 
 h4{
     display: inline-block;
@@ -37,6 +52,7 @@ h4{
 
 .data_container{
 
+    /* the samll div containging API data */
     display: inline-block;
     width:  290px;
     height: auto;
@@ -46,6 +62,7 @@ h4{
     text-align: center;
     margin: 20px;
     padding: 10px;
+    /* background-color: yellow; */
     
 }
 
@@ -85,3 +102,4 @@ a{
     border: 1px solid white;
     border-radius: 7px;
 }
+
