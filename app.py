@@ -85,6 +85,7 @@ def showResult():
     
 
     business_json = r.json()
+    print(business_json)
     # pp = pprint.PrettyPrinter(indent=4) #indexting by four 
     # pp.pprint(business_json) #print data from yelp
     # #three_messages = sample(messages, 3)

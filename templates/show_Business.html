@@ -3,27 +3,30 @@
 <html>
 
     <head>
-        <title> Yelpz | Business </title>
+        <title> Y| Business </title>
         <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/show_Business.css') }}">
     </head>
     <body>
 
         <div id="header"> 
-
-            <h1> ⭐️ ⭐️ ⭐️ ⭐️ ⭐️ ⭐️ ⭐️ ⭐️ ⭐️ </h1>
-            <h1> S O M E T H I N G  -  G O E S  - H E R E </h1>
-
-
+        
+            <a href="/" id="home"> Home </a>
+            <h4> Search | Results   </h4> 
         </div>
 
         <!-- Do a for loop with the range of the amount of bussines was gotten  -->
         {% for i in range(business_json | length + 1) %}
          <div class="data_container">
              <img src="{{ business_json['businesses'][i]['image_url']  }}" id="data_image"/>
-            <h3> <strong>Name:</strong>{{ business_json['businesses'][i]['name']  }} </h3>
-            <h3> Close:  {{ business_json['businesses'][i]['is_closed']  }} </h3>
-            <h3> Rating:  {{ business_json['businesses'][i]['rating']  }} </h3>
-            <h3> Distance:  {{ business_json['businesses'][i]['distance']  }} </h3>
+             <!-- changing store close bool to human readible value Yes, No. -->
+            <h2> <strong></strong>{{ business_json['businesses'][i]['name']  }} </h2>
+            {% if business_json['businesses'][i]['is_closed'] == 'False' %}
+                <h3> Open </h3>
+            {% elif business_json['businesses'][i]['is_closed'] == "True" %}
+                <h3> Close </h3>
+            {% endif %}
+            <h3> ⭐️:  {{ business_json['businesses'][i]['rating']  }} </h3>
+            <h3>  {{ business_json['businesses'][i]['phone']  }} </h3>
             <a href="{{ business_json['businesses'][0]['url'] }}"> Visit </a>
             <!-- gif_list[0]['media'][0]['gif']['url'] -->
          </div>
