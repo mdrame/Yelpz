@@ -2,5 +2,6 @@
 
 ### product
 
-<img scr="index.png">
-<img scr="view.png">
+<img src="index.png">
+<img src="view.png">
+
