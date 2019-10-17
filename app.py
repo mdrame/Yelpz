@@ -60,6 +60,8 @@ def home():
         #testing
     # return "Hello"
 
+    #trying to prit mutiple div, and also avoid DRY
+
   
     return render_template("index.html", city=city)
 
@@ -92,7 +94,7 @@ def showResult():
     #     no_business_found = " Sorry No bussiness match you search "
     #     return
 
-    return render_template("show_Business.html", stars=stars,  business_json=business_json)
+    return render_template("show_Business.html", business_json=business_json)
 
 
 
