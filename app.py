@@ -76,6 +76,7 @@ def showResult():
     PARAMETERS = {  "term": search,
                     "location": location,
                     "offset": 20
+                    # this yelp api return max 20 business. 
                     #watch out!! 20 is hard coded inorder to 
                     #display busines in show_business.html
                 # "key": key
@@ -101,7 +102,10 @@ def showResult():
     return render_template("show_Business.html", business_json=business_json)
 
 
+@app.route("/term")
+def term():
 
+    render_template("term.html")
 
 
 if __name__ == "__main__":

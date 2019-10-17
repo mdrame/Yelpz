@@ -97,9 +97,19 @@ h3{
 a{
     color: white;
     background: red;
-    padding: 6px;
+    padding: 10px;
     text-decoration: none;
     border: 1px solid white;
     border-radius: 7px;
+}
+
+a:hover{
+    color: white;
+    background: rgb(172, 0, 0);
+    padding: 10px;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 7px;
+    transition-duration: 400ms;
 }
 
