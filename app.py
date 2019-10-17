@@ -48,10 +48,16 @@ def home():
     PARAMETERS = {"city": ip_address}
     #calling API
     respond = requests.get(ip_Url, params=PARAMETERS,)
-
     dic_of_datas = respond.json()
     city = dic_of_datas['city']
     print(city)
+
+   
+
+
+
+  
+    return render_template("index.html", city=city)
     
     # number of countries where the largest number of speakers are French
     # data from http://download.geonames.org/export/dump/countryInfo.txt
@@ -63,7 +69,7 @@ def home():
     #trying to prit mutiple div, and also avoid DRY
 
   
-    return render_template("index.html", city=city)
+    
 
 # show result base on what user enter in seach box
 @app.route("/showResult")
@@ -99,13 +105,11 @@ def showResult():
     #     no_business_found = " Sorry No bussiness match you search "
     #     return
 
+    
+
     return render_template("show_Business.html", business_json=business_json)
 
 
-@app.route("/term")
-def term():
-
-    render_template("term.html")
 
 
 if __name__ == "__main__":

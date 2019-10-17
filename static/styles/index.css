@@ -25,6 +25,10 @@ hr{
     border: 0px solid white;
 }
 
+h4{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .form input{
     width: 250px;
     height: 30px;
