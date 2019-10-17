@@ -2,5 +2,5 @@
 
 ### product
 
-<img scr="index.jpg"/>
-<img scr="view.jpg"/>
+<img scr="index.png"/>
+<img scr="view.png"/>
