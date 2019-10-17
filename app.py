@@ -6,6 +6,8 @@ import json
 import os #creating a enviromental variable : so our api key and id won't get pushed to github or remotely.
 # from YelpAPI import get_my_key
 import pprint #pyhton json viewer  libary
+from dotenv import load_dotenv
+load_dotenv()
 
 app = Flask(__name__)
 
@@ -29,11 +31,12 @@ app = Flask(__name__)
 business_id = 'adLzMuVhL1CSj0j0VeXTZQ'
 
 #yelp Api Keys and ID
-API_KEY = 'P8HZvWFwVupqzc7RTaLgjHxRIN0f6E380U6ZpIFCJaPZl-ButUiJlrTq89KVnDkRuesCGBinXj8MPqiUL_KT9ooFU1xHsDe72NBVDWO_MhmKDKpOgUHOASvVG6GiXXYx'
+API_KEY = os.getenv("API_KEY")
 ENDPOINT = 'https://api.yelp.com/v3/businesses/search'
 # key = 'P8HZvWFwVupqzc7RTaLgjHxRIN0f6E380U6ZpIFCJaPZl-ButUiJlrTq89KVnDkRuesCGBinXj8MPqiUL_KT9ooFU1xHsDe72NBVDWO_MhmKDKpOgUHOASvVG6GiXXYx'
 HEADERS = {"Authorization": "bearer %s" % API_KEY}
 
+API_KEY = P8HZvWFwVupqzc7RTaLgjHxRIN0f6E380U6ZpIFCJaPZl-ButUiJlrTq89KVnDkRuesCGBinXj8MPqiUL_KT9ooFU1xHsDe72NBVDWO_MhmKDKpOgUHOASvVG6GiXXYx
 
 # IP-API url
 ip_Url = "http://ip-api.com/json/"

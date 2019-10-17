@@ -8,9 +8,8 @@ body{
 } 
 
 hr{
-    width: 90%;
-   
-}
+    border: 1px solid pink;
+  }
 
 #form_wrap{
  
