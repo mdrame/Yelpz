@@ -75,7 +75,7 @@ def home():
     
 
 # show result base on what user enter in seach box
-@app.route("/showResult")
+@app.route("/showResult", methods=['POST' 'GET'])
 def showResult():
 
 #calling yelp fusion api
