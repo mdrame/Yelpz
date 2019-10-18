@@ -32,7 +32,7 @@ app = Flask(__name__)
 business_id = 'adLzMuVhL1CSj0j0VeXTZQ'
 
 #yelp Api Keys and ID
-API_KEY = os.getenv("API_KEY")
+#API_KEY = "P8HZvWFwVupqzc7RTaLgjHxRIN0f6E380U6ZpIFCJaPZl-ButUiJlrTq89KVnDkRuesCGBinXj8MPqiUL_KT9ooFU1xHsDe72NBVDWO_MhmKDKpOgUHOASvVG6GiXXYx"
 ENDPOINT = 'https://api.yelp.com/v3/businesses/search'
 
 HEADERS = {"Authorization": "bearer %s" % API_KEY}
