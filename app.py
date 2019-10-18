@@ -75,12 +75,13 @@ def home():
     
 
 # show result base on what user enter in seach box
-@app.route("/showResult", methods=['POST' 'GET'])
+@app.route("/showResult", methods=['POST'])
 def showResult():
 
+
 #calling yelp fusion api
-    search = request.args.get("term")
-    location = request.args.get("city")
+    search = request.form.get("term")
+    location = request.form.get("city")
     # this is usually right behind the url of API address
     PARAMETERS = {  "term": search,
                     "location": location,
