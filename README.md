@@ -1,6 +1,5 @@
-### yelpz
 
-### product:
+### UI/UX :
 
 <img src="index.png">
 <img src="view.png">
