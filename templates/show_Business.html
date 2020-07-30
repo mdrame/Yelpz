@@ -8,10 +8,10 @@
     </head>
     <body>
 
-        <div id="header"> 
-        
+        <div id="header">
+
             <a href="/" id="home"> Home </a>
-            <h4> Search | Results   </h4> 
+            <h4> Search | Results   </h4>
         </div>
 
         <!-- Do a for loop with the range of the amount of bussines was gotten  -->
@@ -24,17 +24,18 @@
             <h2> <strong></strong>{{ business_json['businesses'][i]['name']  }} </h2>
             <h3> ⭐️:  {{ business_json['businesses'][i]['rating']  }} </h3>
             <h3>  {{ business_json['businesses'][i]['phone']  }} </h3>
+            <h3>  {{ business_json['businesses'][i]['transactions']  }} </h3>
             <a href="{{ business_json['businesses'][0]['url'] }}"> Visit </a>
             <!-- gif_list[0]['media'][0]['gif']['url'] -->
          </div>
          {% endfor %}
 
-        
 
 
 
 
-        
+
+
 
     </body>
 

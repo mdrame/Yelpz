@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template
-from random import choice, sample 
+from random import choice, sample
 import  random
 import requests
 import json
@@ -41,10 +41,10 @@ HEADERS = {"Authorization": "bearer %s" % API_KEY}
 # IP-API url
 ip_Url = "http://ip-api.com/json/"
 
-#home route 
+#home route
 @app.route('/')
 def home():
-   
+
     # got Api from remote_addr
     ip_address = request.remote_addr
     # this is usually right behind the url of API address
@@ -55,13 +55,13 @@ def home():
     city = dic_of_datas['city']
     print(city)
 
-   
 
 
 
-  
+
+
     return render_template("index.html", city=city)
-    
+
     # number of countries where the largest number of speakers are French
     # data from http://download.geonames.org/export/dump/countryInfo.txt
     # if country in ('BL', 'MF', 'TF', 'BF', 'BI', 'BJ', 'CD', 'CF', 'CG', 'CI', 'DJ', 'FR', 'GA', 'GF', 'GN', 'GP', 'MC', 'MG', 'ML', 'MQ', 'NC'):
@@ -71,8 +71,8 @@ def home():
 
     #trying to prit mutiple div, and also avoid DRY
 
-  
-    
+
+
 
 # show result base on what user enter in seach box
 @app.route("/showResult", methods=['POST'])
@@ -86,21 +86,22 @@ def showResult():
     PARAMETERS = {  "term": search,
                     "location": location,
                     "offset": 20
-                    # this yelp api return max 20 business. 
-                    #watch out!! 20 is hard coded inorder to 
+                    # this yelp api return max 20 business.
+                    #watch out!! 20 is hard coded inorder to
                     #display busines in show_business.html
                 # "key": key
                 }
-
+    # Make Networking call
     r = requests.get(url = ENDPOINT,
                     params=PARAMETERS,
                     headers=HEADERS)
 
-    
 
+  # save result to business_json variable
     business_json = r.json()
+    # print json in consle
     print(business_json)
-    # pp = pprint.PrettyPrinter(indent=4) #indexting by four 
+    # pp = pprint.PrettyPrinter(indent=4) #indexting by four
     # pp.pprint(business_json) #print data from yelp
     # #three_messages = sample(messages, 3)
 
@@ -109,10 +110,8 @@ def showResult():
     #     no_business_found = " Sorry No bussiness match you search "
     #     return
 
-    
 
     return render_template("show_Business.html", business_json=business_json)
-
 
 
 
