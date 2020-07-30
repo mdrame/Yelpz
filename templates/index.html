@@ -13,16 +13,16 @@
             <h4> Yelpz </h4>
         <hr>
 
-    
-        
+
+
         <div id="form_wrap">
             <form action="/showResult" method="POST" class="form">
                 <input onfocus="this.value=''" type="text" name="term" placeholder=" Food, Business ..."> </input>
                 <input onfocus="this.value=''" type="text" name="city" value="{{ city }}" > </input>
-                <button type="submit"> Submit </button>
+                <button type="submit"> Search </button>
             </form>
         </div>
-       
+
 
         {% for x in range(0,2) %}
         <div class="blink_red">
@@ -34,11 +34,11 @@
             </div>
         {% endfor %}
 
-        <div id="footer"> 
-            
-            
-             
-            
+        <div id="footer">
+
+
+
+
                <a href="https://www.yelp.com/static?p=tos">Terms | Privacy</a>
                <a href="https://www.yelp-support.com/article/How-do-I-contact-Yelp?l=en_US">Contact Us</a>
                <a href="https://www.yelp.com/about">About</a>
